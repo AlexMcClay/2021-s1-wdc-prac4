@@ -54,5 +54,29 @@ router.get('/color.html', function(req, res, next) {
 </html> `);
 
 });
+var list = "";
+router.get('/log.html', function(req, res, next) {
+    date = new Date();
+    list += "<li>" + date + "</li>";
+    res.send(`<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+  <title>Express</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <ul id="list">
+  ${list}
+  </ul>
+
+</body>
+
+</html> `);
+
+});
+
 
 module.exports = router;

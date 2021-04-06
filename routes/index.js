@@ -108,15 +108,16 @@ router.get('/color.txt', function(req, res, next) {
 });
 
 // Task 4.3
-var list2 = "";
+list2 = [];
 router.get('/log.json', function(req, res, next) {
     date = new Date();
-    list2 += "<li>" + date + "</li>";
-    res.send(list2);
+    //date = date.toLocaleString;
+    list2.push(date);
+    res.json(list2);
 });
 
 router.get('/log-ro.json', function(req, res, next) {
-    res.send(list2);
+    res.json(list2);
 });
 
 module.exports = router;

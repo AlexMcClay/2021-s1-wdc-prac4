@@ -7,8 +7,12 @@ function list() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var z = document.getElementById("list");
-            z.innerHTML =
-            this.responseText;
+            var x = JSON.parse(this.responseText);
+            z.innerHTML = "";
+            for (i = 0; i < x.length; i++) {
+                z.innerHTML += `<li>` + x[i] +`</li>`;
+            }
+
             var myVar = setInterval(list_update, 10000);
         }
     };
@@ -29,8 +33,11 @@ function list_update() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var z = document.getElementById("list");
-            z.innerHTML =
-            this.responseText;
+            var x = JSON.parse(this.responseText);
+            z.innerHTML = "";
+            for (i = 0; i < x.length; i++) {
+                z.innerHTML += `<li>` + x[i] +`</li>`;
+            }
         }
     };
     // open connection

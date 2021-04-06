@@ -76,7 +76,32 @@ router.get('/log.html', function(req, res, next) {
 
 </html> `);
 
+
+
 });
 
+var counter2 = 0;
+router.get('/color.txt', function(req, res, next) {
+  var color;
+
+  if (counter2 == 0) {
+    color = "red";
+    counter2 = 1;
+  }
+  else if (counter2 == 1) {
+    color = "yellow";
+    counter2 = 2;
+  }
+  else if (counter2 == 2) {
+    color = "green";
+    counter2 = 3;
+  }
+  else if (counter2 == 3) {
+    color = "blue";
+    counter2 = 0;
+  }
+    res.send(color);
+
+});
 
 module.exports = router;

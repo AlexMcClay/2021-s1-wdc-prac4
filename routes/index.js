@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
+// First Task
 var Prev_Date = " ";
 var date = " ";
 router.get('/last.txt', function(req, res, next) {
@@ -16,7 +16,7 @@ router.get('/last.txt', function(req, res, next) {
 
 });
 
-
+// Color Task
 var counter = 0;
 router.get('/color.html', function(req, res, next) {
   var color;
@@ -54,6 +54,8 @@ router.get('/color.html', function(req, res, next) {
 </html> `);
 
 });
+
+// Storing Dates and Displaying them Task
 var list = "";
 router.get('/log.html', function(req, res, next) {
     date = new Date();
@@ -80,6 +82,7 @@ router.get('/log.html', function(req, res, next) {
 
 });
 
+// Color 2 Task
 var counter2 = 0;
 router.get('/color.txt', function(req, res, next) {
   var color;
@@ -102,6 +105,18 @@ router.get('/color.txt', function(req, res, next) {
   }
     res.send(color);
 
+});
+
+// Task 4.3
+var list2 = "";
+router.get('/log.json', function(req, res, next) {
+    date = new Date();
+    list2 += "<li>" + date + "</li>";
+    res.send(list2);
+});
+
+router.get('/log-ro.json', function(req, res, next) {
+    res.send(list2);
 });
 
 module.exports = router;
